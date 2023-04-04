@@ -8,7 +8,9 @@ pageObjects\CountryPage.class
 pageObjects\NhsStartPage.class
 pageObjects\PayCareHomeFromLocalCouncilPage.class
 pageObjects\CareHomePage.class
+pageObjects\DentalPracticePage.class
 pageObjects\BasePage.class
 pageObjects\DateOfBirthPage.class
+pageObjects\GpPracticePage.class
 pageObjects\InjuryOrIllnessPage.class
 pageObjects\DoYouLiveWithAPartner.class

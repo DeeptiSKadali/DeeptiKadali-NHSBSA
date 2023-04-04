@@ -13,7 +13,7 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 2568198300,
+  "duration": 3194182000,
   "status": "passed"
 });
 formatter.background({
@@ -90,7 +90,7 @@ formatter.match({
   "location": "EndToEndJourney.i_navigate_to_NHS_cost_checker_tool()"
 });
 formatter.result({
-  "duration": 701395700,
+  "duration": 787063600,
   "status": "passed"
 });
 formatter.scenario({
@@ -126,25 +126,25 @@ formatter.match({
   "location": "EndToEndJourney.i_am_a_person_from_Wales()"
 });
 formatter.result({
-  "duration": 2579418800,
+  "duration": 2414220600,
   "status": "passed"
 });
 formatter.match({
   "location": "EndToEndJourney.i_put_my_circumstances_into_the_Checker_tool()"
 });
 formatter.result({
-  "duration": 6307513400,
+  "duration": 5711540600,
   "status": "passed"
 });
 formatter.match({
   "location": "EndToEndJourney.i_should_get_a_result_of_whether_I_will_get_help_or_not()"
 });
 formatter.result({
-  "duration": 14813300,
+  "duration": 17779400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 751411300,
+  "duration": 824546500,
   "status": "passed"
 });
 });

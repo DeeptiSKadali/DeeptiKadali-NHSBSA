@@ -9,7 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -19,48 +19,48 @@ import envReader.EnvReader;
 
 public class Hooks
 {
-    public static WebDriver driver;
-    public static String OS = "windows";
-    public static String browser = "chrome";
-    
-    Scenario scenario;
+	public static WebDriver driver;
+	public static String OS;
+	public static String browser;
+	public static String windows;
+	public static String MAC;
+	public static String firefox;
+	public static String chrome;
+
+	Scenario scenario;
 
 
-    @Before
-    public void beforeStartUp(Scenario scenario) throws IOException
-    {
-    	OS = System.getProperty("OS");
-    	browser = System.getProperty("browser");
-    	
-    	System.out.println(" OS "+System.getProperty("OS"));
-    	System.out.println(" browser "+System.getProperty("browser"));
-    	
-    	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//" + EnvReader.getProperty("chrome_windows"));
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    	
-		/*
-		 * if (OS.equalsIgnoreCase("MAC")) { if (browser.equalsIgnoreCase("chrome")) {
-		 * System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
-		 * + "//" + EnvReader.getProperty("chrome_mac")); driver = new ChromeDriver();
-		 * driver.manage().window().maximize(); }
-		 * 
-		 * else if (browser.equalsIgnoreCase("firefox")) { driver = new FirefoxDriver();
-		 * driver.manage().window().maximize(); } }
-		 * 
-		 * else if (OS.equalsIgnoreCase("Windows")) { if
-		 * (browser.equalsIgnoreCase("chrome")) {
-		 * System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
-		 * + "//" + EnvReader.getProperty("chrome_windows")); driver = new
-		 * ChromeDriver(); driver.manage().window().maximize(); }
-		 * 
-		 * else if (browser.equalsIgnoreCase("firefox")) {
-		 * System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") +
-		 * "//" + EnvReader.getProperty("firefox_windows")); driver = new
-		 * FirefoxDriver(); driver.manage().window().fullscreen(); }
-		 */
-    	//}
-  }
+	@Before
+	public void beforeStartUp(Scenario scenario) throws IOException {
+	    OS = System.getProperty("OS");
+	    browser = System.getProperty("browser");
+
+	    System.out.println(" OS " + System.getProperty("OS"));
+	    System.out.println(" browser " + System.getProperty("browser"));
+
+
+	    if (OS.equalsIgnoreCase("MAC")) {
+	        if (browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//" + EnvReader.getProperty("chrome_mac"));
+	            driver = new ChromeDriver();
+	            driver.manage().window().maximize();
+	        } else if (browser.equalsIgnoreCase("firefox")) {
+	            driver = new FirefoxDriver();
+	            driver.manage().window().maximize();
+	        }
+	    } else if(OS.equalsIgnoreCase("Windows")) {
+	        if (browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//" + EnvReader.getProperty("chrome_windows"));
+	            driver = new ChromeDriver();
+	            driver.manage().window().maximize();
+	        } else if (browser.equalsIgnoreCase("firefox")) {
+	            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "//" + EnvReader.getProperty("firefox_windows"));
+	            driver = new FirefoxDriver();
+	            driver.manage().window().fullscreen();
+	        }
+
+	    }
+	}
 
 
     @After
